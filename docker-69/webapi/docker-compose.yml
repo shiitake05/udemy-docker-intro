@@ -1,0 +1,25 @@
+version: '3.9'
+services:
+  api:
+    build: ./api    # docker image build -t api-img ./api
+    ports:
+      - 8080:8080  # docker container run --name api -p 8080:8080 api-img
+    depends_on:
+      - db
+  db:
+    image: postgres:15
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=mypassword
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=appdb
+    volumes:
+      - db-storage:/var/lib/postgresql/data
+      - ./db/initdb:/docker-entrypoint-initdb.d
+
+volumes:
+  db-storage:
+
+# docker compose up --build
+# イメージの作り直し
