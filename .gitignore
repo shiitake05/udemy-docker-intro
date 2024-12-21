@@ -1,2 +1,29 @@
-docker-66/
-docker-69/
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# Dependency directories
+/node_modules/
+/build/
+/out/
+/bin/
+/target/
+
+# IDE specific files
+.idea/
+.vscode/
+*.iml
+
+# Environment variables
+.env
+
+# Database files
+*.db
+*.sql
+
+# その他の無視するファイル
+hoge.txt
+largefile
